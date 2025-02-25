@@ -16,7 +16,7 @@ public class SubsetProblem{
 
         // Base case:
         // 1. 0 elements give, but need a target
-        // unnessary sinse java initailised will 0 by default
+        // unnessary since java initailised will 0 by default
         for(int i=0;i<=target;i++){
             dp[0][i] = false;
         }

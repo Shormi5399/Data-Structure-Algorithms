@@ -1,6 +1,6 @@
 public class Knapsack_Topdown{
     private static int knapsack(int[] weights, int[] values, int capacity, int index){
-
+        // Base case: by default it is 0
         int[][] dp = new int[index+1][capacity+1];
 
         // Build the DP table bottom-up
@@ -12,7 +12,7 @@ public class Knapsack_Topdown{
                     int exclude = dp[i - 1][w];
                     dp[i][w] = Math.max(include, exclude);
 
-                } else if (weights[i - 1] <= w) {
+                } else if (weights[i - 1] > w) {
                     // If weight exceeds capacity, exclude the item
                     dp[i][w] = dp[i - 1][w];
                 }
