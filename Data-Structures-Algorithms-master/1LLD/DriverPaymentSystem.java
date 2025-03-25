@@ -15,6 +15,7 @@ class DriverPaymentSystem {
         int id;
         float hourlyRate;
         List<long[]> deliveries;
+        float balance;
 
         Driver(int id, float hourlyRate) {
             this.id = id;
@@ -32,6 +33,7 @@ class DriverPaymentSystem {
     public void addDelivery(int driverId, long startTime, long endTime) {
         if (!drivers.containsKey(driverId) || endTime <= startTime) return;
         drivers.get(driverId).deliveries.add(new long[]{startTime, endTime});
+        drivers.get(driverId).balance.
     }
 
     public float getTotalPayment() {
